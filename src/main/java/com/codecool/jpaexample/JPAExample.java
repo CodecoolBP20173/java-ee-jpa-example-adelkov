@@ -38,6 +38,8 @@ public class JPAExample {
 
         Address address2 = new Address("Hungary", "6789", "Budapest", "Harap u. 3.");
         Student student2 = new Student("Aladár", "ktyfl@gmail.com", birthDate2, address);
+        student2.addPhoneNumber("+fsdf");
+        student2.addPhoneNumber("+343434");
         classBp2.addStudent(student2);
 
         transaction.begin();

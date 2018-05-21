@@ -15,11 +15,16 @@ public class Student {
 
     private String name;
 
+    @ElementCollection
+    List<String> phoneNumbers = new ArrayList<>();
+
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
+    @Transient
     private long age;
 
     @OneToOne
@@ -83,6 +88,10 @@ public class Student {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public void addPhoneNumber(String phoneNumber){
+        phoneNumbers.add(phoneNumber);
     }
 
     @Override
